@@ -3,7 +3,4 @@ services:
   python:
     image: python:3.8-alpine
     working_dir: /usr/src/app
-    command: |
-      apk add --no-cache git
-      git clone https://hexadoo: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@github.com/hexadoo/dockerpython.git
-      python antminer.py
+    command: python antminer.py
