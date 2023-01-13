@@ -1,6 +1,14 @@
 version: '3'
 services:
   python:
-    image: python:3.8-alpine
-    working_dir: /usr/src/app
-    command: python antminer.py
+    image: python:3.8
+    volumes:
+      - qnap-nfs:/mnt/nfs
+    command: python /mnt/nfs/container_nfs/python/antminer.py
+volumes:
+  qnap-nfs:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=192.168.1.205,rw
+      device: ":/container_nfs"
