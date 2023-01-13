@@ -6,4 +6,4 @@ services:
     command: |
       apk add --no-cache git
       git clone https://hexadoo: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@github.com/hexadoo/dockerpython.git
-      python repo/antminer.py
+      python antminer.py
